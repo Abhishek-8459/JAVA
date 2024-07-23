@@ -11,55 +11,55 @@ class Publication
 
 {
 
-    int copies;
+	int copies;
 
-    String title;
+	String title;
 
-    int price;
+	int price;
 
+	
 
+	void accept() {
 
-    void accept() {
+		Scanner sc = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
+		System.out.print("Enter Title: ");
 
-        System.out.print("Enter Title: ");
+		title = sc.nextLine();
 
-        title = sc.nextLine();
+		System.out.println("");
 
-        System.out.println("");
+		System.out.print("Enter Numbers of copies: ");
 
-        System.out.print("Enter Numbers of copies: ");
+		copies = sc.nextInt();
 
-        copies = sc.nextInt();
+		System.out.println("");
 
-        System.out.println("");
+		System.out.print("Enter the price: ");
 
-        System.out.print("Enter the price: ");
+		price = sc.nextInt();
 
-        price = sc.nextInt();
+		System.out.println("");
 
-        System.out.println("");
+		
 
+	}
 
+		void display() {
 
-    }
+			System.out.println("Title: "+title);
 
-    void display() {
+			System.out.println("Copies: "+copies);
 
-        System.out.println("Title: "+title);
+			System.out.println("Price: "+price);
 
-        System.out.println("Copies: "+copies);
+			
 
-        System.out.println("Price: "+price);
+		
 
+	}
 
-
-
-
-    }
-
-
+		
 
 }
 
@@ -67,47 +67,47 @@ class Book extends Publication
 
 {
 
-    private String author;
+		private String author;
 
-    int total ;
+		int total ;
 
+		
 
+		void ordercopies() {
 
-    void ordercopies() {
+			 Scanner sr = new Scanner(System.in);
 
-        Scanner sr = new Scanner(System.in);
+			 System.out.print("Enter Author name: ");
 
-        System.out.print("Enter Author name: ");
+			 author = sr.nextLine();
 
-        author = sr.nextLine();
+			 System.out.println("");
 
-        System.out.println("");
+			 System.out.println("Enter number of copies orderd: ");
 
-        System.out.println("Enter number of copies orderd: ");
+			 total = sr.nextInt();
 
-        total = sr.nextInt();
-
-        System.out.println("");
-
-
-
-
-
-    }
-
-
-
-    void remain() {
-
-        System.out.println("The total sale of publication is: "+total);
-
-        System.out.println("The stock of book remaining is is: "+ (this.copies-total));
+			 System.out.println("");
 
 
 
 
 
-    }
+		}
+
+		
+
+	void remain() {
+
+		System.out.println("The total sale of publication is: "+total);
+
+		System.out.println("The stock of book remaining is is: "+ (this.copies-total));
+
+
+
+		
+
+	}
 
 }
 
@@ -115,95 +115,115 @@ class Magzine extends Book
 
 {
 
-    int quantity;
+		int quantity;
 
+		
 
+		void orderquantity() {                                                                                                                                                                                                                                       
 
-    void orderquantity() {
+			Scanner sc = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
+			System.out.print("Enter number of copies to order: ");
 
-        System.out.print("Enter number of copies to order: ");
+			quantity = sc.nextInt();
 
-        quantity = sc.nextInt();
+			System.out.println("");
 
-        System.out.println("");
+		}
 
-    }
+	void currentissue() {
 
-    void currentissue() {
+		System.out.println("Currently issued book: "+super.title);
 
-        System.out.println("Currently issued book: "+super.title);
+	}
 
-    }
+	void reciveissue() {
 
-    void reciveissue() {
+		System.out.println("Recived Issued Book: "+super.title);
 
-        System.out.println("Recived Issued Book: "+super.title);
+		System.out.println("Number of copies ordered are: "+this.quantity);
 
-        System.out.println("Number of copies ordered are: "+this.quantity);
+		
 
-
-
-    }
+	}
 
 //	Override
 
-    public int saleCopy(int orders) {
+	public int saleCopy(int orders) {
 
-        System.out.println("Total magzine"+ this.title +"sold"+orders );
+		System.out.println("Total magzine"+ this.title +"sold"+orders );
 
-        return orders;
+		return orders;
 
-    }
+	}
 
 
 
 }
 
-public class Assignment_2 {
+public class Assignment_2
 
-    public static void main(String[] args) {
+{
 
-        Publication P = new Publication();
+public static void main(String[] args)
 
-        System.out.println("***Enter the publication details***");
+	{
 
-        P.accept();
+	Publication P = new Publication();
 
-        System.out.println("***Displaying details of publication***");
+	System.out.println("***Enter the publication details***");
 
-        P.display();
+	P.accept();
 
-        Book b = new Book();
+	System.out.println("***Displaying details of publication***");
 
-        System.out.println("***Enter the Book details***");
+	P.display();
 
-        b.accept();
+	Book b = new Book();
 
-        b.ordercopies();
+	System.out.println("***Enter the Book details***");
 
-        System.out.println("***Displaying Book Details");
+	b.accept();
 
-        b.display();
+	b.ordercopies();
 
+	 System.out.println("***Displaying Book Details");
 
-        Magzine m = new Magzine();
+	 b.display();
 
-        System.out.println("***Entering details of magzine***");
+	
 
-        m.accept();
+	 
 
-        m.ordercopies();
+	 Magzine m = new Magzine();
 
-        m.orderquantity();
+	 System.out.println("***Entering details of magzine***");
 
-        System.out.println("***Displaying magzine details***");
+	 m.accept();
 
-        m.display();
+	 m.ordercopies();
 
-        System.out.println("***Displaying current issue of magzines***");
+	 m.orderquantity();
 
-        m.currentissue();
-    }
+	 System.out.println("***Displaying magzine details***");
+
+	 m.display();
+
+	 System.out.println("***Displaying current issue of magzines***");
+
+	 m.currentissue();
+
+	 System.out.println("Displaying recive issue of magzines");
+
+	 m.reciveissue();	
+
+	 System.out.println("Displaying total sale of Publication: ");
+
+	 b.remain();
+
+	 
+
+	}
+
 }
+
