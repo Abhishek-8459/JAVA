@@ -1,0 +1,158 @@
+package assignment_4;
+
+import java.util.Scanner;
+
+abstract class Shape{
+
+	Scanner sc = new Scanner(System.in);
+
+	double length;
+
+	double breadth;
+
+	
+
+	Shape(double x, double y){
+
+		length =x;
+
+		breadth =y;
+
+	}
+
+//	void getdata() {
+
+//	    	System.out.println("Enter the length: ");
+
+//	    	this.length=sc.nextDouble();
+
+//	    	System.out.println("Enter the breadth: ");
+
+//	    	this.breadth=sc.nextDouble();	    	
+
+//	    	}
+
+	
+
+//	
+
+	abstract double compute_areas();
+
+} 
+
+
+
+class triangle extends Shape{
+
+	double height ;
+
+triangle(double x, double y , double z){
+
+	super(x,y);
+
+	
+
+	height = z;
+
+	
+
+}
+
+	@Override
+
+	double compute_areas() {
+
+		double ans = (0.5*length*breadth*height);
+
+		return ans;
+
+	}
+
+}
+
+
+
+class rectangle extends Shape{
+
+	double height ;
+
+rectangle(double x, double y ){
+
+	super(x,y);
+
+}
+
+	@Override
+
+	double compute_areas() {
+
+		double ans = (length*breadth);
+
+		return ans;
+
+	}
+
+}
+
+public class Assign_4 {
+
+public static void main(String[] args) {
+
+	Scanner sc = new Scanner(System.in);
+
+	System.out.println("****Select the shape to find the area****");
+
+	System.out.printf("1.Triangle\n2.Rectangle\n");
+
+	int n = sc.nextInt();
+
+	switch(n) {
+
+	case 1 :
+
+		System.out.println("Enter the length of triangle");
+
+		double l = sc.nextDouble();
+
+		System.out.println("Enter Base of the triangle");
+
+		double b = sc.nextDouble();
+
+		System.out.println("Enter the height of triangle");
+
+		double h = sc.nextDouble();
+
+		Shape T = new triangle(l,b,h);
+
+		System.out.println("Area of triangle is: "+T.compute_areas());
+
+		break;
+
+	case 2:
+
+		System.out.println("Enter the length of Rectangle");
+
+		double l1 = sc.nextDouble();
+
+		System.out.println("Enter Base of the Rectangle");
+
+		double b2 = sc.nextDouble();
+
+		Shape R = new rectangle(l1,b2);
+
+		System.out.println("Area of rectangle  is: "+R.compute_areas());
+
+		break;
+
+	default:
+
+		System.out.println("Invalid Choise");
+
+	}
+
+	
+
+}
+
+}
+
