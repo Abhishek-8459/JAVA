@@ -1,0 +1,248 @@
+package assi;
+import java.util.*;
+
+interface vehicle{
+//	void input_print();
+	void gear_change();
+	void speed_up();
+	void apply_break();
+	
+}
+
+class bicycle implements vehicle{
+	int speed;
+	int gear;
+	Scanner sc=new Scanner(System.in);
+	bicycle(){
+		speed=5;
+		gear=1;
+		System.out.print("Enter Name of Your Bicycle: ");
+		String name=sc.nextLine();
+		System.out.println("");
+		System.out.println("Bicycle "+name);
+	}
+//	public void input_print() {
+//		
+//	}
+
+	
+	public void gear_change() {
+		
+		if(gear+1<=5) {
+			gear=gear+1;
+		System.out.println("The cuurrent gear is: "+gear)	;
+		}
+		else {
+			System.out.println("Your vehile is on the top gear");
+		}
+	}
+	public void speed_up() {
+		System.out.println("Enter the speed");
+		int s = sc.nextInt();
+		if(speed+s<=20) {
+		speed=speed+s;
+		System.out.println("The cuurrent Speed is: "+speed+" KM/H");
+		}
+		else {
+			System.out.println("Speed is : 20 \nMaximum speed reached");
+		}
+	}
+	public void apply_break() {
+		if(speed!=0) {
+			speed=speed-5;
+			gear = gear-1;
+			System.out.println("Brake applied current speed is: "+speed);
+			System.out.println("The current gear is: "+gear);
+		}
+		
+	}
+	public void opreations() {
+		int n = 0;
+		do {
+		System.out.println("Select opreation to perform: \n 1.Speed UP \n 2.Gear Change\n 3.Appply Brakes\n 4.Exit");
+		 n = sc.nextInt();
+		
+		switch (n){
+		case 1:
+			this.speed_up();
+			break;
+		case 2 :
+			this.gear_change();
+			break;
+		case 3 :
+			this.apply_break();
+			break;
+		case 4:
+			break;
+		}
+	}while(n!=4);
+	}
+}
+
+class bike implements vehicle {
+	
+	int speed;
+	int gear;
+	Scanner sc=new Scanner(System.in);
+	bike(){
+		speed=5;
+		gear=1;
+		System.out.print("Enter Name of Your Bike: ");
+		String name=sc.nextLine();
+		System.out.println("");
+		System.out.println("Bike:  "+name);
+	}
+//	public void input_print() {
+//		
+//	}
+
+	
+	public void gear_change() {
+	
+		if(gear+1<=6) {
+		gear=gear+1;
+		System.out.println("The cuurrent gear is: "+gear)	;
+		}
+		else {
+			System.out.println("Your vehile is on the top gear");
+		}
+	}
+	public void speed_up() {
+		System.out.println("Enter the speed");
+		int s = sc.nextInt();
+		if(speed+s<=100) {
+		speed=speed+s;
+		System.out.println("The cuurrent Speed is: "+speed+" KM/H");
+		}
+		else {
+			System.out.println("Speed is : 100 \nMaximum speed reached");
+		}
+	}
+	public void apply_break() {
+		if(speed!=0) {
+			speed=speed-5;
+			gear = gear-1;
+			System.out.println("Brake applied current speed is: "+speed);
+			System.out.println("The current gear is: "+gear);
+		}
+		
+	}
+	public void opreations() {
+		int n = 0;
+		do {
+		System.out.println("Select opreation to perform: \n 1.Speed UP \n 2.Gear Change\n 3.Appply Brakes\n 4.Exit");
+		 n = sc.nextInt();
+		
+		switch (n){
+		case 1:
+			this.speed_up();
+			break;
+		case 2 :
+			this.gear_change();
+			break;
+		case 3 :
+			this.apply_break();
+			break;
+		case 4:
+			break;
+		}
+	}while(n!=4);
+	}
+}
+
+class car implements vehicle {
+	
+	int speed;
+	int gear;
+	Scanner sc=new Scanner(System.in);
+	car(){
+		speed=20;
+		gear=1;
+		System.out.print("Enter Name of Your Car: ");
+		String name=sc.nextLine();
+		System.out.println("");
+		System.out.println("Car:  "+name);
+	}
+//	public void input_print() {
+//		
+//	}
+
+	
+	public void gear_change() {
+		
+		if(gear+1<=5) {
+			gear=gear+1;
+		System.out.println("The cuurrent gear is: "+gear)	;
+		}
+		else {
+			System.out.println("Your vehile is on the top gear");
+		}
+	}
+	public void speed_up() {
+		System.out.println("Enter the speed");
+		int s = sc.nextInt();
+		if(speed+s<=200) {
+		speed=speed+s;
+		System.out.println("The cuurrent Speed is: "+speed+" KM/H");
+		}
+		else {
+			System.out.println("Speed is : 200 \nMaximum speed reached");
+		}
+	}
+	public void apply_break() {
+		if(speed!=0) {
+			speed=speed-5;
+			gear = gear-1;
+			System.out.println("Brake applied current speed is: "+speed);
+			System.out.println("The current gear is: "+gear);
+		}
+		
+	}
+	
+	public void opreations() {
+		int n = 0;
+		do {
+		System.out.println("Select opreation to perform: \n 1.Speed UP \n 2.Gear Change\n 3.Appply Brakes\n 4.Exit");
+		 n = sc.nextInt();
+		
+		switch (n){
+		case 1:
+			this.speed_up();
+			break;
+		case 2 :
+			this.gear_change();
+			break;
+		case 3 :
+			this.apply_break();
+			break;
+		case 4:
+			break;
+		}
+	}while(n!=4);
+	}
+	
+}
+
+public class Assignment_5 {
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Select an vehicle\n1.Bicycle\n2.Bike\n3.Car");
+		int n = sc.nextInt();
+		switch (n) {
+		case 1:
+			bicycle b= new bicycle();
+			b.opreations();
+			break;
+		case 2:
+			bike q = new bike();
+			q.opreations();
+			break;
+		case 3 :
+			car c = new car();
+			c.opreations();
+			break;
+		default:
+			System.out.println("Invalid Input");
+		}
+	}
+}
